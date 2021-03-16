@@ -7,14 +7,16 @@
   margin-bottom: 20px;
 }
 
-.image {
-  width: 70px;
-  height: 44px;
-  background: #000000;
+.name {
+  max-width: 300px;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 22px;
+  text-align: center;
 }
 
-.name {
-  font-size: 22px;
+.population {
+  width: 190px;
 }
 
 .number {
@@ -29,5 +31,4 @@
   font-size: 20px;
   font-weight: normal;
   color: #777777;
-  text-align: center;
 }

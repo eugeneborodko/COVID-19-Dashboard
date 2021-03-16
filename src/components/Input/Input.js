@@ -8,6 +8,7 @@ const Input = () => {
   const value = useSelector((state) => state.input.value)
   const dispatch = useDispatch()
   const ref = React.createRef()
+
   return (
     <div className={styles.container}>
       <input

@@ -1,12 +1,20 @@
 import styles from './country.module.scss'
 
-const Country = () => {
+const Country = ({ flag, name, population }) => {
+  population = population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+
   return (
     <li className={styles.country}>
-      <div className={styles.image} />
-      <h3 className={styles.name}>Country Name</h3>
+      <img
+        className={styles.flag}
+        src={flag}
+        alt={name}
+        width={55}
+        height={40}
+      />
+      <h3 className={styles.name}>{name}</h3>
       <div className={styles.population}>
-        <h4 className={styles.number}>10,000, 000</h4>
+        <h4 className={styles.number}>{population}</h4>
         <h4 className={styles.text}>Population</h4>
       </div>
     </li>
