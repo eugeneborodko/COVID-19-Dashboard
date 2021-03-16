@@ -1,0 +1,33 @@
+.country {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 70px;
+  height: 44px;
+  background: #000000;
+}
+
+.name {
+  font-size: 22px;
+}
+
+.number {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: normal;
+  color: #777777;
+}
+
+.text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: normal;
+  color: #777777;
+  text-align: center;
+}
