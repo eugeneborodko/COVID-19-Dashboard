@@ -10,7 +10,6 @@ const Country = () => {
         <h4 className={styles.text}>Population</h4>
       </div>
     </li>
-
   )
 }
 
