@@ -1,5 +1,9 @@
 import { takeEvery, put, call, all } from 'redux-saga/effects'
-import { LOAD_COUNTRY_DATA, putCountryData } from './country/actions'
+import {
+  LOAD_COUNTRY_DATA,
+  putCountryData,
+  putCopiedCountryData,
+} from './country/actions'
 
 function getCountryDate() {
   return fetch(
@@ -10,6 +14,7 @@ function getCountryDate() {
 function* workerLoadCountryData() {
   const data = yield call(getCountryDate)
   yield put(putCountryData(data))
+  yield put(putCopiedCountryData(data))
 }
 
 export function* watchAll() {

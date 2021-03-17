@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { changeInputValue, resetInputValue } from './../../store/input/actions'
+import { changeCountryData } from './../../store/country/actions'
 
 import styles from './input.module.scss'
 
@@ -20,6 +21,7 @@ const Input = () => {
         autoFocus
         onChange={(event) => {
           dispatch(changeInputValue(event.target.value))
+          dispatch(changeCountryData(event.target.value))
         }}
       />
       <button

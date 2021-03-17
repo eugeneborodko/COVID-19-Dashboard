@@ -34,6 +34,7 @@ const Countries = () => {
           })}
         </ul>
       )}
+      {!data.length && <h2 className={styles.title}>No matches</h2>}
     </>
   )
 }
