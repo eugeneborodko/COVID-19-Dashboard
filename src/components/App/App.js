@@ -1,7 +1,5 @@
-import Input from './../Input/Input'
-import Countries from './../Countries/Countries'
-import Preview from './../Preview/Preview'
-import Statistics from './../Statistics/Statistics'
+import HomePage from './../../pages/HomePage/HomePage'
+import Statistics from './../../pages/Statistics/Statistics'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import logger from 'redux-logger'
@@ -29,14 +27,7 @@ const App = () => {
               <Statistics />
             </Route>
             <Route path="/">
-              <>
-                <Preview />
-                <div className="container">
-                  <h2 className={styles.title}>Instant Search</h2>
-                  <Input />
-                  <Countries />
-                </div>
-              </>
+              <HomePage />
             </Route>
           </Switch>
         </div>
