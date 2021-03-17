@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom'
+
 import styles from './country.module.scss'
 
 const Country = ({ flag, name, population }) => {
   population = population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
   return (
-    <li className={styles.country}>
+    <Link className={styles.country} to={`/${name}`}>
       <img
         className={styles.flag}
         src={flag}
@@ -17,7 +19,7 @@ const Country = ({ flag, name, population }) => {
         <h4 className={styles.number}>{population}</h4>
         <h4 className={styles.text}>Population</h4>
       </div>
-    </li>
+    </Link>
   )
 }
 

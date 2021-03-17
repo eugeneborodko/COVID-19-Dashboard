@@ -20,7 +20,7 @@ const Countries = () => {
   return (
     <>
       {data.length && (
-        <ul className={styles.countries}>
+        <div className={styles.countries}>
           {data.map((country, index) => {
             const { flag, name, population } = country
             return (
@@ -32,7 +32,7 @@ const Countries = () => {
               />
             )
           })}
-        </ul>
+        </div>
       )}
       {!data.length && <h2 className={styles.title}>No matches</h2>}
     </>

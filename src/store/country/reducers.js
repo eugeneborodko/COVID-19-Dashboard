@@ -30,7 +30,7 @@ export const country = (state = initialState, action) => {
         ...state,
         clonedData: action.payload,
       }
+    default:
+      return state
   }
-
-  return state
 }

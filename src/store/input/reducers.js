@@ -16,7 +16,7 @@ export const input = (state = initialState, action) => {
         ...state,
         value: '',
       }
+    default:
+      return state
   }
-
-  return state
 }
