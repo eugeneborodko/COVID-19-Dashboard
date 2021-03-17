@@ -10,30 +10,27 @@ const initialState = {
 }
 
 export const country = (state = initialState, action) => {
-  if (action.type === PUT_COUNTRY_DATA) {
-    return {
-      ...state,
-      data: action.payload,
-    }
-  }
-
-  if (action.type === CHANGE_COUNTRY_DATA) {
-    const regex = new RegExp(action.payload)
-    console.log(regex)
-    const data = state.clonedData.filter((country) =>
-      country.name.toLowerCase().match(regex),
-    )
-    return {
-      ...state,
-      data,
-    }
-  }
-
-  if (action.type === PUT_COPIED_COUNTRY_DATA) {
-    return {
-      ...state,
-      clonedData: action.payload,
-    }
+  switch (action.type) {
+    case PUT_COUNTRY_DATA:
+      return {
+        ...state,
+        data: action.payload,
+      }
+    case CHANGE_COUNTRY_DATA:
+      const regex = new RegExp(action.payload)
+      console.log(regex)
+      const data = state.clonedData.filter((country) =>
+        country.name.toLowerCase().match(regex),
+      )
+      return {
+        ...state,
+        data,
+      }
+    case PUT_COPIED_COUNTRY_DATA:
+      return {
+        ...state,
+        clonedData: action.payload,
+      }
   }
 
   return state

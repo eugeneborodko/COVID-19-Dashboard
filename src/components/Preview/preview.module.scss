@@ -1,0 +1,47 @@
+.preview {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 15px 25px;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 7px 6px 26px -17px black;
+
+  &1 {
+    background: #3498db;
+  }
+
+  &2 {
+    background: #e74c3c;
+  }
+
+  &3 {
+    background: #2ecc71;
+  }
+}
+
+.number {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.text {
+  font-size: 34px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.title {
+  margin: 40px 0;
+  font-size: 40px;
+  text-align: center;
+}

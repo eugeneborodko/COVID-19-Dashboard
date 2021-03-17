@@ -1,5 +1,6 @@
 import Input from './../Input/Input'
 import Countries from './../Countries/Countries'
+import Preview from './../Preview/Preview'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import logger from 'redux-logger'
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className={styles.app}>
+        <Preview />
         <div className="container">
           <h2 className={styles.title}>Instant Search</h2>
           <Input />
