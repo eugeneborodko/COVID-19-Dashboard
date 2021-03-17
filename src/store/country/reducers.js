@@ -17,8 +17,7 @@ export const country = (state = initialState, action) => {
         data: action.payload,
       }
     case CHANGE_COUNTRY_DATA:
-      const regex = new RegExp(action.payload)
-      console.log(regex)
+      const regex = new RegExp(action.payload.toLowerCase())
       const data = state.clonedData.filter((country) =>
         country.name.toLowerCase().match(regex),
       )
