@@ -7,13 +7,14 @@ import styles from './preview.module.scss'
 
 const Preview = () => {
   const data = useSelector((state) => state.covid.data)
+  console.log('data: ', data)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(loadCovidData())
-  }, [])
+  }, [dispatch])
 
-  if (!data) {
+  if (!Object.keys(data).length) {
     return <div>Loading...</div>
   }
 

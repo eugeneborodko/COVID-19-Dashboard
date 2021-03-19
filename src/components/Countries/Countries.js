@@ -11,7 +11,7 @@ const Countries = () => {
 
   useEffect(() => {
     dispatch(loadCountryData())
-  }, [])
+  }, [dispatch])
 
   if (!data) {
     return <div>Loading...</div>
@@ -19,7 +19,7 @@ const Countries = () => {
 
   return (
     <>
-      {data.length && (
+      {!!data.length && (
         <div className={styles.countries}>
           {data.map((country, index) => {
             const { flag, name, population } = country

@@ -23,7 +23,7 @@ const App = () => {
       <Provider store={store}>
         <div className={styles.app}>
           <Switch>
-            <Route path="/Belarus">
+            <Route path="/:countryName">
               <Statistics />
             </Route>
             <Route path="/">

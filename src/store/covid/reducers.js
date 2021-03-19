@@ -1,7 +1,7 @@
 import { PUT_COVID_DATA } from './actions'
 
 const initialState = {
-  data: {},
+  data: [],
 }
 
 export const covid = (state = initialState, action) => {
