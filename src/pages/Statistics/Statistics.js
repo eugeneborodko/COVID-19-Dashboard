@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { covidDetailsData } from './../../utils/covidDetailsData'
@@ -29,6 +29,9 @@ const Statistics = () => {
             .toLocaleDateString()
             .replace(/\//g, '.')}`}
         </p>
+        <Link className={styles.link} to="/">
+          Back to Home Page
+        </Link>
         {filtered.push(
           data.Countries.filter((country) => {
             const regex = new RegExp(country.Country)
