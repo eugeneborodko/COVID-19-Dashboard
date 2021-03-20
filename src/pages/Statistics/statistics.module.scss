@@ -31,3 +31,14 @@
   text-align: center;
   border: 1px solid #ddd;
 }
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .excel {
+    padding: 15px 24px;
+    font-size: 19px;
+  }
+}
