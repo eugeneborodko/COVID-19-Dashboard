@@ -7,7 +7,6 @@ import styles from './preview.module.scss'
 
 const Preview = () => {
   const data = useSelector((state) => state.covid.data)
-  console.log('data: ', data)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -15,24 +14,23 @@ const Preview = () => {
   }, [dispatch])
 
   if (!Object.keys(data).length) {
-    return <div>Loading...</div>
+    return <div className="loading">Loading...</div>
   }
 
   return (
     <>
-      <h1 className={styles.title}>Coronavirus Dashboard</h1>
       {!!Object.keys(data).length && (
         <div className={styles.preview}>
-          {totalCovidData.map((item, index) => {
-            const { TotalDeaths, TotalConfirmed, TotalRecovered } = data.Global
-            const arr = [TotalDeaths, TotalConfirmed, TotalRecovered]
+          {totalCovidData.map((item) => {
             return (
               <div
                 className={`${styles['item']} ${styles[`item${item.id}`]}`}
                 key={item.id}
               >
                 <h2 className={styles.number}>
-                  {arr[index].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                  {data.Global[item.param]
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                 </h2>
                 <p className={styles.text}>{item.text}</p>
               </div>

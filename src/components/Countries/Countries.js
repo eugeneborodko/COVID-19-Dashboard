@@ -13,8 +13,8 @@ const Countries = () => {
     dispatch(loadCountryData())
   }, [dispatch])
 
-  if (!data) {
-    return <div>Loading...</div>
+  if (!data.length) {
+    return <div className="loading">Loading...</div>
   }
 
   return (

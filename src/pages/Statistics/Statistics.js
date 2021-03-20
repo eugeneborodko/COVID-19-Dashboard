@@ -9,28 +9,26 @@ import styles from './statistics.module.scss'
 const Statistics = () => {
   const data = useSelector((state) => state.covid.data)
   const dispatch = useDispatch()
+  const { countryName } = useParams()
+  const filtered = []
 
   useEffect(() => {
     dispatch(loadCovidData())
   }, [dispatch])
 
-  let { countryName } = useParams()
-
   if (!Object.keys(data).length) {
-    return <div>Loading...</div>
+    return <div className="loading">Loading...</div>
   }
-
-  const filtered = []
 
   return (
     <>
       <div className="container">
         <h1 className={styles.title}>{countryName} statistics</h1>
-        <p
-          className={styles.text}
-        >{`Data is current as of ${new Date()
-          .toLocaleDateString()
-          .replace(/\//g, '.')}`}</p>
+        <p className={styles.text}>
+          {`Data is current as of ${new Date()
+            .toLocaleDateString()
+            .replace(/\//g, '.')}`}
+        </p>
         {filtered.push(
           data.Countries.filter((country) => {
             const regex = new RegExp(country.Country)
@@ -41,38 +39,22 @@ const Statistics = () => {
           <table className={styles.table}>
             <tbody>
               {covidDetailsData.map((item, index) => {
-                const {
-                  Country,
-                  CountryCode,
-                  NewConfirmed,
-                  TotalConfirmed,
-                  NewDeaths,
-                  TotalDeaths,
-                  NewRecovered,
-                  TotalRecovered,
-                } = filtered[0][0]
-                const arr = [
-                  Country,
-                  CountryCode,
-                  NewConfirmed,
-                  TotalConfirmed,
-                  NewDeaths,
-                  TotalDeaths,
-                  NewRecovered,
-                  TotalRecovered,
-                ]
-
                 return (
-                  <tr className={styles.row} key={item.id}>
+                  <tr
+                    className={index % 2 === 0 ? styles.rowEven : styles.rowOdd}
+                    key={item.id}
+                  >
                     <td className={styles.excel}>{item.name}</td>
-                    <td className={styles.excel}>{arr[index]}</td>
+                    <td className={styles.excel}>
+                      {filtered[0][0][item.param]}
+                    </td>
                   </tr>
                 )
               })}
             </tbody>
           </table>
         )}
-        {!filtered[0].length && <div>No data</div>}
+        {!filtered[0].length && <div className={styles.text}>No data</div>}
       </div>
     </>
   )

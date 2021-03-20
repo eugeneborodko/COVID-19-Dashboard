@@ -15,6 +15,16 @@
   border-collapse: collapse;
 }
 
+.row {
+  &Even {
+    background: #ffffff;
+  }
+
+  &Odd {
+    background: #eaeaea;
+  }
+}
+
 .excel {
   padding: 20px 40px;
   font-size: 25px;

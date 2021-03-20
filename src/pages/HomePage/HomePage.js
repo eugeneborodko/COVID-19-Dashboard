@@ -7,9 +7,16 @@ import styles from './home-page.module.scss'
 const HomePage = () => {
   return (
     <>
+      <div className="container">
+        <h1 className={`${styles.title} ${styles.mainTitle}`}>
+          Coronavirus Dashboard
+        </h1>
+      </div>
       <Preview />
       <div className="container">
-        <h2 className={styles.title}>Instant Search</h2>
+        <h2 className={`${styles.title} ${styles.secondaryTitle}`}>
+          Instant Search
+        </h2>
         <Input />
         <Countries />
       </div>
