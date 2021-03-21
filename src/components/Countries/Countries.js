@@ -14,7 +14,7 @@ const Countries = () => {
   }, [dispatch])
 
   if (!data.length) {
-    return <div className="loading">Loading...</div>
+    return <h2 className={styles.title}>No matches</h2>
   }
 
   return (
@@ -34,7 +34,6 @@ const Countries = () => {
           })}
         </div>
       )}
-      {!data.length && <h2 className={styles.title}>No matches</h2>}
     </>
   )
 }
