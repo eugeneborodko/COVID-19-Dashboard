@@ -18,7 +18,7 @@ const Countries = () => {
   }
 
   return (
-    <>
+    <div className={styles.container} id={styles.container}>
       {!!data.length && (
         <div className={styles.countries}>
           {data.map((country, index) => {
@@ -34,7 +34,7 @@ const Countries = () => {
           })}
         </div>
       )}
-    </>
+    </div>
   )
 }
 
