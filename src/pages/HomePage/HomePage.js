@@ -1,4 +1,5 @@
 import Preview from './../../components/Preview/Preview'
+import BarChart from './../../components/BarChart/BarChart'
 import Input from './../../components/Input/Input'
 import Countries from './../../components/Countries/Countries'
 
@@ -13,6 +14,7 @@ const HomePage = () => {
         </h1>
       </div>
       <Preview />
+      <BarChart />
       <div className="container">
         <h2 className={`${styles.title} ${styles.secondaryTitle}`}>
           Instant Search
